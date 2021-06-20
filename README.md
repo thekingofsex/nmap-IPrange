@@ -1,5 +1,5 @@
 ![Github stars](https://img.shields.io/github/stars/gooderbrother/nmapIPrange.svg)
-# :boom:nmap-IPrange
+# :boom:nmapIPrange
 
 *a liitle tool to convert nmap-ip format into string list* <br>
 nmap-IPrange可以将输入的nmap格式的IPV4地址字符串转换成IP并且以string list的格式返回<br>
@@ -24,7 +24,7 @@ import (
 )
 
 func main() {
-
+	//注意导入的包名为nmap-IPrange，实际使用的包名为nmapIPrange
 	hosts, err := nmapIPrange.Handler("192.22.168.1,10.1.1.1/26,172.16.2.*,123.123.123.1-200")
 	fmt.Println(hosts)
 	log.Println(err)
