@@ -1,7 +1,7 @@
 ![Github stars](https://img.shields.io/github/stars/gooderbrother/nmapIPrange.svg)
 # :boom:nmap-IPrange
 
-a liitle tool to convert nmap-ip format into string list
+* a liitle tool to convert nmap-ip format into string list *<br>
 nmap-IPrange可以将输入的nmap格式的IPV4地址字符串转换成IP并且以string list的格式返回<br>
 
 ## :zap:例如:zap:：
@@ -32,9 +32,9 @@ func main() {
 }
 ```
 ***
-@2021-6-20 :+1: 第一版本发布！！ :heart:<br>
+@2021-6-20  第一版本发布！！ :heart:<br>
 刚学golang不久，算是个练手项目，目前更新到v0.1版本<br>
 不同于隔壁大哥的iprange库，这个源码更适合人类阅读。。。 :blush:<br><br><br>
-@2021-6-21 :+1: 修复了一个处理星号处的小bug :heart:<br>
+@2021-6-21  修复了一个处理星号处的小bug :heart:<br>
 ***
 
