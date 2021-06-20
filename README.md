@@ -20,7 +20,7 @@ package main
 import (
 	"fmt"
 	"log"
-	"github.com/gooderbrother/nmapIPrange"
+	"github.com/gooderbrother/nmap-IPrange"
 )
 
 func main() {
