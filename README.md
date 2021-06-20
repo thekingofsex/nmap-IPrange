@@ -1,7 +1,7 @@
 ![Github stars](https://img.shields.io/github/stars/gooderbrother/nmapIPrange.svg)
 # :boom:nmap-IPrange
 
-* a liitle tool to convert nmap-ip format into string list *<br>
+*a liitle tool to convert nmap-ip format into string list* <br>
 nmap-IPrange可以将输入的nmap格式的IPV4地址字符串转换成IP并且以string list的格式返回<br>
 
 ## :zap:例如:zap:：
