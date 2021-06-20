@@ -47,13 +47,18 @@ func DealAsterisk(s string) ([]string, error) {
 func DealHyphen(s string) ([]string, error) {
 	tmp := strings.Split(s, ".")
 	//TODO 异常处理
-	iprange_tmp := strings.Split(tmp[3], "-")
-	var ips []string
-	tail, _ := strconv.Atoi(iprange_tmp[1])
-	for head, _ := strconv.Atoi(iprange_tmp[0]); head <= tail; head++ {
-		ips = append(ips, tmp[0]+"."+tmp[1]+"."+tmp[2]+"."+strconv.Itoa(head))
+	if len(tmp) == 3 {
+		iprange_tmp := strings.Split(tmp[3], "-")
+		var ips []string
+		tail, _ := strconv.Atoi(iprange_tmp[1])
+		for head, _ := strconv.Atoi(iprange_tmp[0]); head <= tail; head++ {
+			ips = append(ips, tmp[0]+"."+tmp[1]+"."+tmp[2]+"."+strconv.Itoa(head))
+		}
+		return ips, nil
+	} else {
+		return nil, errors.New("Wrong Hyphen!")
 	}
-	return ips, nil
+
 }
 
 func Handler(s string) ([]string, []error) {
@@ -64,7 +69,7 @@ func Handler(s string) ([]string, []error) {
 
 	for i := 0; i < len(IPstrings); i++ {
 		if strings.Contains(IPstrings[i], "*") {
-			//TODP 192.168.0.*
+			//TODO 192.168.0.*
 			ips_tmp, err_tmp := DealAsterisk(IPstrings[i])
 			err = append(err, err_tmp)
 			ips = append(ips, ips_tmp...)
