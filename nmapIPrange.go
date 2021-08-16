@@ -16,9 +16,6 @@ func DealCIDR(cidr string) ([]string, error) {
 	var ips []string
 	//在循环里创建的所有函数变量共享相同的变量。
 	for ip := ip.Mask(ipnet.Mask); ipnet.Contains(ip); ip_tools(ip) {
-		if ip[3] == 0 || ip[3] == 255 {
-			continue
-		}
 		ips = append(ips, ip.String())
 	}
 	return ips[1 : len(ips)-1], nil
