@@ -51,7 +51,7 @@ func DealAsterisk(s string) ([]string, error) {
 func DealHyphen(s string) ([]string, error) {
 	tmp := strings.Split(s, ".")
 	//TODO 异常处理
-	if len(tmp) == 3 {
+	if len(tmp) == 4 {
 		iprange_tmp := strings.Split(tmp[3], "-")
 		var ips []string
 		tail, _ := strconv.Atoi(iprange_tmp[1])
