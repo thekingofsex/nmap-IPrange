@@ -2,6 +2,7 @@ package nmapIPrange
 
 import (
 	"errors"
+	"fmt"
 	"net"
 	"strconv"
 	"strings"
@@ -15,6 +16,9 @@ func DealCIDR(cidr string) ([]string, error) {
 	var ips []string
 	//在循环里创建的所有函数变量共享相同的变量。
 	for ip := ip.Mask(ipnet.Mask); ipnet.Contains(ip); ip_tools(ip) {
+		if ip[3] == 0 || ip[3] == 255 {
+			continue
+		}
 		ips = append(ips, ip.String())
 	}
 	return ips[1 : len(ips)-1], nil
@@ -41,7 +45,7 @@ func DealAsterisk(s string) ([]string, error) {
 		return DealCIDR(strings.Replace(s, "*", "1", -1) + "/8")
 	}
 
-	return nil, errors.New("Wrong Asterisk!")
+	return nil, errors.New("wrong Asterisk")
 }
 
 func DealHyphen(s string) ([]string, error) {
@@ -56,7 +60,7 @@ func DealHyphen(s string) ([]string, error) {
 		}
 		return ips, nil
 	} else {
-		return nil, errors.New("Wrong Hyphen!")
+		return nil, errors.New("wrong Hyphen")
 	}
 
 }
@@ -89,5 +93,6 @@ func Handler(s string) ([]string, []error) {
 			ips = append(ips, IPstrings[i])
 		}
 	}
+	fmt.Println("hello")
 	return ips, err
 }
